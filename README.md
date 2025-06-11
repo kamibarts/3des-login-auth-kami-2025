@@ -1,7 +1,7 @@
 # Login - auth
 Estrutura de autenticação para o projeto **Login**.
 ## Atividade em grupo de até 3 integrantes.
-integrantes: kamili
+Integrantes: ## kamili
 - Clonar este repositório.
 - Testar a api com **insomnia**.
 - Estudar e documentar a estrutura do projeto.
