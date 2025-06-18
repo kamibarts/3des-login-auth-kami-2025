@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="home.css" />
+  <title>Tela Principal</title>
+</head>
+
+<body>
+  <header>
+    
+    <h1 id="nomeUsuario">Tela Principal</h1>
+  </header>
+
+  <main>
+    <button onclick="sair()">Sair</button>
+
+    <div class="card">
+      <h3>Como ser mais produtivo em 2025</h3>
+      <p>Dicas práticas para organizar sua rotina e alcançar mais resultados.</p>
+      <small>📅 Publicado em: <strong>10/05/2025</strong></small>
+      <div class="icons">
+        <span>❤️ 210</span>
+        <span>👀 1243</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>As melhores linguagens de programação para iniciantes</h3>
+      <p>Comparação entre Python, JavaScript e outras linguagens populares.</p>
+      <small>📅 Publicado em: <strong>28/04/2025</strong></small>
+      <div class="icons">
+        <span>❤️ 165</span>
+        <span>👀 980</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Entenda o que é Inteligência Artificial Generativa</h3>
+      <p>Um guia simples sobre o que é IA generativa e como ela funciona.</p>
+      <small>📅 Publicado em: <strong>01/05/2025</strong></small>
+      <div class="icons">
+        <span>❤️ 312</span>
+        <span>👀 1576</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>5 hábitos saudáveis para adotar ainda hoje</h3>
+      <p>Pequenas mudanças de rotina que trazem grandes resultados.</p>
+      <small>📅 Publicado em: <strong>15/05/2025</strong></small>
+      <div class="icons">
+        <span>❤️ 120</span>
+        <span>👀 842</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Guia básico de investimentos para iniciantes</h3>
+      <p>O que você precisa saber antes de começar a investir.</p>
+      <small>📅 Publicado em: <strong>30/04/2025</strong></small>
+      <div class="icons">
+        <span>❤️ 198</span>
+        <span>👀 1340</span>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <h2>By Instrutor</h2>
+  </footer>
+
+   <script>
+        function sair() {
+            localStorage.removeItem('logado'); 
+            window.location.href = "index.html";
+        }
+
+        async function gerarHash(event) {
+            event.preventDefault();
+            const senha = document.getElementById('senha').value;
+            const encoder = new TextEncoder();
+            const data = encoder.encode(senha);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+            document.getElementById('hashResult').textContent = hashHex;
+        }
+    </script>
+
+
+</body>
+
+</html>
